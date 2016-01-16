@@ -1,6 +1,6 @@
 {
     "name": "laravel-js-lang-converter",
-    "version": "1.2.1",
+    "version": "2.0.0",
     "description": "Laravel Localization in JavaScript",
     "main": "src/js/lang.js",
     "directories": {
@@ -12,12 +12,12 @@
     },
     "repository": {
         "type": "git",
-        "url": "git://github.com/rmariuzzo/Laravel-JS-Localization.git"
+        "url": "git://github.com/michele-angioni/laravel-js-lang-converter.git"
     },
-    "author": "rmariuzzo",
+    "author": "Michele Angioni",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/rmariuzzo/Laravel-JS-Localization/issues"
+        "url": "https://github.com/michele-angioni/laravel-js-lang-converter/issues"
     },
     "devDependencies": {
         "jasmine-node": "~1.14.3"

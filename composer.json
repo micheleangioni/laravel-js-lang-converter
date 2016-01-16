@@ -3,7 +3,7 @@
     "description": "Laravel Localization in JavaScript",
     "type": "library",
     "keywords": ["laravel", "laravel 5", "localization", "i18n", "javascript", "js", "lang"],
-    "homepage": "https://github.com/rmariuzzo/laravel-js-localization",
+    "homepage": "https://github.com/michele-angioni/laravel-js-lang-converter",
     "license": "MIT",
     "authors": [{
         "name": "Rubens Mariuzzo",
@@ -30,8 +30,8 @@
         "role": "Developer"
     }],
     "support": {
-        "issues": "https://github.com/rmariuzzo/laravel-js-localization/issues",
-        "source": "https://github.com/rmariuzzo/laravel-js-localization"
+        "issues": "https://github.com/michele-angioni/laravel-js-lang-converter/issues",
+        "source": "https://github.com/michele-angioni/laravel-js-lang-converter"
     },
     "require": {
         "php": ">=5.5.9",

@@ -34,6 +34,7 @@ Finally you need to add the Laravel JS Lang Converter service provider in your `
     // ...
 ],
 ```
+
 and you are done!
 
 Usage
@@ -155,7 +156,7 @@ You need to have installed the following softwares.
  - Composer
  - NodeJS
  - NPM
- - PHP 5.4+
+ - PHP 5.5.9+
 
 After getting all the required softwares you may run the following commands to get everything ready:
 
