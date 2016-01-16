@@ -25,7 +25,7 @@ class LangJsCommand extends Command
     /**
      * Construct a new LangJsCommand.
      *
-     * @param \MicheleAngioni\LaravelJsLangConverter\Generators\LangJsGenerator The generator instance.
+     * @param  \MicheleAngioni\LaravelJsLangConverter\Generators\LangJsGenerator
      */
     public function __construct(LangJsGenerator $generator)
     {

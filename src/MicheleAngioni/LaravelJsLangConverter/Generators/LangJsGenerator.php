@@ -18,8 +18,8 @@ class LangJsGenerator
     /**
      * Construct a new LangJsGenerator instance.
      *
-     * @param Illuminate\Filesystem\File $file       The file service instance.
-     * @param string                     $sourcePath The source path of the language files.
+     * @param  \Illuminate\Filesystem\Filesystem  $file
+     * @param  string  $sourcePath
      */
     public function __construct(File $file, $sourcePath)
     {
@@ -32,6 +32,8 @@ class LangJsGenerator
      *
      * @param string $target  The target directory.
      * @param array  $options Array of options.
+     *
+     * @return int
      */
     public function generate($target, $options)
     {
@@ -55,6 +57,7 @@ class LangJsGenerator
     /**
      * Return all language messages.
      *
+     * @throws \Exception
      * @return array
      */
     protected function getMessages()

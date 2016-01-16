@@ -1,20 +1,18 @@
-Laravel JS Localization
+Laravel JS Lang Converter
 =======================
-
-[![Join the chat at https://gitter.im/rmariuzzo/Laravel-JS-Localization](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/rmariuzzo/Laravel-JS-Localization?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 > Laravel Localization in JavaScript.
 
+![Laravel 5.2](https://img.shields.io/badge/Laravel-5.1-f4645f.svg)
 ![Laravel 5.1](https://img.shields.io/badge/Laravel-5.1-f4645f.svg)
-![Laravel 5.0](https://img.shields.io/badge/Laravel-5.0-f4645f.svg)
-![Laravel 4.2](https://img.shields.io/badge/Laravel-4.2-f4645f.svg)
-[![Latest Stable Version](https://poser.pugx.org/mariuzzo/laravel-js-localization/v/stable.svg)](https://packagist.org/packages/mariuzzo/laravel-js-localization)
-[![Total Downloads](https://poser.pugx.org/mariuzzo/laravel-js-localization/downloads.svg)](https://packagist.org/packages/mariuzzo/laravel-js-localization)
-[![License](https://poser.pugx.org/mariuzzo/laravel-js-localization/license.svg)](https://packagist.org/packages/mariuzzo/laravel-js-localization)
+[![Latest Stable Version](https://poser.pugx.org/michele-angioni/laravel-js-localization/v/stable.svg)](https://packagist.org/packages/michele-angioni/laravel-js-localization)
+[![License](https://poser.pugx.org/michele-angioni/laravel-js-localization/license.svg)](https://packagist.org/packages/michele-angioni/laravel-js-localization)
 
-This is a simple package that convert all your localization messages of your Laravel app to JavaScript, and provides a small JavaScript library to interact with those messages.
+Laravel JS Lang Converter converts all your localization messages of your Laravel app to JavaScript, providing a small JavaScript library to interact with those messages in the fron end.
 
-Support Laravel 4.2.x, Laravel 5 and Laravel 5.1.x.
+Most of the work has been developed in [Mariuzzo's package ](https://github.com/rmariuzzo/laravel-js-localization)
+
+Support Laravel Laravel 5.1.x and 5.2.x.
 
 Installation
 ------------
@@ -22,30 +20,26 @@ Installation
 Add the following line to you `composer.json` file under `require`.
 
 ```json
-"mariuzzo/laravel-js-localization": "1.2.*"
+"michele-angioni/laravel-js-localization": "~2.0"
 ```
 
-Run:
+Then you can run `composer update` or `composer install`.
 
-```shell
-composer update
-```
-
-In your Laravel app go to `app/config/app.php` and add the following service provider:
+Finally you need to add the Laravel JS Lang Converter service provider in your `app/config/app.php` file 
 
 ```php
-'providers' => array(
+'providers' => [
     // ...
-    'Mariuzzo\LaravelJsLocalization\LaravelJsLocalizationServiceProvider',
+    'MicheleAngioni\LaravelJsLangConverter\LaravelJsLangConverterServiceProvider',
     // ...
-)
+],
 ```
-That's it!
+and you are done!
 
 Usage
 -----
 
-This project comes with a command that generate the JavaScript version of all your messages found at: `app/lang` or `resources/lang` directory. The resulting JavaScript file will have the whole bunch of messages and a thin library similar to Laravel's `Lang` class.
+This project comes with a command that generate the JavaScript version of all your messages found in `resources/lang` directory. The resulting JavaScript file will have the whole bunch of messages and a thin library similar to Laravel's `Lang` class.
 
 **Generating JS messages**
 
@@ -140,10 +134,12 @@ Lang.choice('messages.apples', 10);
 Lang.choice('messages.apples', 10, { name: 'Joe' });
 ```
 
-For more detailed information, take a look at the source: [Lang.js](https://github.com/rmariuzzo/Laravel-JS-Localization/blob/master/js/lang.js).
+For more detailed information, take a look at the source: [Lang.js](https://github.com/michele-angioni/laravel-js-lang-converter/blob/master/js/lang.js).
 
-Want to contribute?
+How to contribute
 ===================
+
+Pull requests are welcome. 
 
  1. Fork this repository and clone it.
  2. Create a branch from develop: `git checkout -b feature-foo`.
@@ -156,10 +152,10 @@ Setting up development environment
 
 You need to have installed the following softwares.
 
- - Composer.
- - NodeJS.
- - NPM.
- - PHP 5.4+.
+ - Composer
+ - NodeJS
+ - NPM
+ - PHP 5.4+
 
 After getting all the required softwares you may run the following commands to get everything ready:
 
