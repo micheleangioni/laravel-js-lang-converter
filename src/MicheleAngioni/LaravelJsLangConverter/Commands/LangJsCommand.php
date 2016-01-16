@@ -1,15 +1,10 @@
-<?php namespace Mariuzzo\LaravelJsLocalization\Commands;
+<?php namespace MicheleAngioni\LaravelJsLangConverter\Commands;
 
 use Illuminate\Console\Command;
-use Mariuzzo\LaravelJsLocalization\Generators\LangJsGenerator;
+use MicheleAngioni\LaravelJsLangConverter\Generators\LangJsGenerator;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 
-/**
- * The LangJsCommand class.
- *
- * @author Rubens Mariuzzo <rubens@mariuzzo.com>
- */
 class LangJsCommand extends Command
 {
     /**
@@ -30,7 +25,7 @@ class LangJsCommand extends Command
     /**
      * Construct a new LangJsCommand.
      *
-     * @param Mariuzzo\LaravelJsLocalization\Genrators\LangJsGenerator The generator instance.
+     * @param \MicheleAngioni\LaravelJsLangConverter\Generators\LangJsGenerator The generator instance.
      */
     public function __construct(LangJsGenerator $generator)
     {

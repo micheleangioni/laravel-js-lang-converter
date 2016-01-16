@@ -1,13 +1,8 @@
-<?php namespace Mariuzzo\LaravelJsLocalization\Generators;
+<?php namespace MicheleAngioni\LaravelJsLangConverter\Generators;
 
 use Illuminate\Filesystem\Filesystem as File;
 use JShrink\Minifier;
 
-/**
- * The LangJsGenerator class.
- *
- * @author Rubens Mariuzzo <rubens@mariuzzo.com>
- */
 class LangJsGenerator
 {
     /**

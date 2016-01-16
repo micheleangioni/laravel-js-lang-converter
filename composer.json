@@ -1,5 +1,5 @@
 {
-    "name": "mariuzzo/laravel-js-localization",
+    "name": "michele-angioni/laravel-js-lang-converter",
     "description": "Laravel Localization in JavaScript",
     "type": "library",
     "keywords": ["laravel", "laravel 5", "localization", "i18n", "javascript", "js", "lang"],
@@ -23,6 +23,11 @@
         "name": "Ramon Ackermann",
         "homepage": "https://github.com/sboo",
         "role": "Developer"
+    },{
+        "name": "Michele Angioni",
+        "email":        "michele.angioni@gmail.com",
+        "homepage": "https://github.com/micheleangioni",
+        "role": "Developer"
     }],
     "support": {
         "issues": "https://github.com/rmariuzzo/laravel-js-localization/issues",
@@ -30,22 +35,22 @@
     },
     "require": {
         "php": ">=5.5.9",
-        "laravel/framework": "5.1.*",
+        "laravel/framework": "5.1.*|5.2.*",
         "tedivm/jshrink": "1.0.*"
     },
     "require-dev": {
-        "phpunit/phpunit": "4.0.*",
+        "phpunit/phpunit": "~4.1",
         "orchestra/testbench": "~3.0",
         "mockery/mockery": "0.9.*"
     },
     "autoload": {
         "psr-4": {
-            "Mariuzzo\\LaravelJsLocalization\\": "src/Mariuzzo/LaravelJsLocalization/"
+            "MicheleAngioni\\LaravelJsLangConverter\\": "src/MicheleAngioni/LaravelJsLangConverter/"
         }
     },
   "autoload-dev": {
     "psr-4": {
-      "Mariuzzo\\LaravelJsLocalization\\": "tests/"
+      "MicheleAngioni\\LaravelJsLangConverter\\": "tests/"
     }
   },
     "minimum-stability": "stable"

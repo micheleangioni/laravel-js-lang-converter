@@ -1,13 +1,8 @@
-<?php namespace Mariuzzo\LaravelJsLocalization;
+<?php namespace MicheleAngioni\LaravelJsLangConverter;
 
 use Illuminate\Support\ServiceProvider;
 
-/**
- * The LaravelJsLocalizationServiceProvider class.
- *
- * @author Rubens Mariuzzo <rubens@mariuzzo.com>
- */
-class LaravelJsLocalizationServiceProvider extends ServiceProvider
+class LaravelJsLangConverterServiceProvider extends ServiceProvider
 {
     /**
      * Indicates if loading of the provider is deferred.

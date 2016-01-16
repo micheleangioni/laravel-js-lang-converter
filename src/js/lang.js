@@ -1,12 +1,3 @@
-/*!
- *  Lang.js for Laravel localization in JavaScript.
- *
- *  @version 1.1.0
- *  @license MIT
- *  @site    https://github.com/rmariuzzo/Laravel-JS-Localization
- *  @author  rmariuzzo
- */
-
 'use strict';
 
 (function(root, factory) {
