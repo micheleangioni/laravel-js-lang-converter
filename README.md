@@ -62,35 +62,37 @@ php artisan lang:js -c
 
 **Use [gulp](http://gulpjs.com/) to publish (optional):**
 
-install `gulp-shell` from https://github.com/sun-zheng-an/gulp-shell with `npm install --save-dev gulp-shell` 
-and then run it directly in your `gulpfile.js`:
+1. Install `gulp-shell` from https://github.com/sun-zheng-an/gulp-shell with `npm install --save-dev gulp-shell` .
 
-```js
-var shell = require('gulp-shell');
+2. Create an extension for elixir in your `gulpfile.js`:
 
-//......
-
-gulp.task('langJs', shell.task('php artisan lang:js -c public/js/messages.js'));
-```
-
-or you can extend [Laravel's elixir](http://laravel.com/docs/5.1/elixir) like this:
-
-```js
-elixir.extend("langjs", function(path) {
-    gulp.task("langjs", function() {
-        gulp.src("").pipe(shell("php artisan lang:js " + (path || "public/js/messages.js")));
+    ```js
+    var shell = require('gulp-shell');
+    
+    //......
+    
+    var Task = elixir.Task;
+    
+    elixir.extend('langjs', function(path, minimize) {
+        new Task('langjs', function() {
+            var command = "php artisan lang:js " + (path || "public/js/messages.js");
+                if (minimize) {
+                    command += " -c";
+                }
+            return gulp.src("").pipe(shell(command));
+        });
     });
+    
+    gulp.task('langJs', shell.task('php artisan lang:js -c public/js/messages.js'));
+    ```
 
-    return this.queueTask("langjs");
-});
-```
-and use it like this:
+3.  Use the new elixir task:
 
 ```js
 elixir(function(mix) {
-
-    mix.langjs();
-
+    var path = "public/js";
+    var minimize = true;
+    mix.langjs(path, minimize);
 });
 ```
 
@@ -160,17 +162,17 @@ You need to have installed the following softwares.
 
 After getting all the required softwares you may run the following commands to get everything ready:
 
- 1. Install PHP dependencies:
+1. Install PHP dependencies:
 
     ```shell
     composer install
     ```
 
- 2. Install NPM dependences:
+2. Install NPM dependences:
 
     ```shell
     npm install -g jasmine-node
-
+    
     npm install
     ```
 
