@@ -5,12 +5,14 @@ Laravel JS Lang Converter
 
 ![Laravel 5.2](https://img.shields.io/badge/Laravel-5.2-f4645f.svg)
 ![Laravel 5.1](https://img.shields.io/badge/Laravel-5.1-f4645f.svg)
-[![Latest Stable Version](https://poser.pugx.org/michele-angioni/laravel-js-localization/v/stable.svg)](https://packagist.org/packages/michele-angioni/laravel-js-localization)
-[![License](https://poser.pugx.org/michele-angioni/laravel-js-localization/license.svg)](https://packagist.org/packages/michele-angioni/laravel-js-localization)
+[![Build Status](https://travis-ci.org/micheleangioni/laravel-js-lang-converter.svg?branch=master)](https://travis-ci.org/micheleangioni/laravel-js-lang-converter)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/b9c37a8d-26aa-458b-8e7e-7ccac6d1e021/small.png)](https://insight.sensiolabs.com/projects/b9c37a8d-26aa-458b-8e7e-7ccac6d1e021)
+[![Latest Stable Version](https://poser.pugx.org/michele-angioni/laravel-js-lang-converter/v/stable.svg)](https://packagist.org/packages/michele-angioni/laravel-js-lang-converter)
+[![License](https://poser.pugx.org/michele-angioni/laravel-js-lang-converter/license.svg)](https://packagist.org/packages/michele-angioni/laravel-js-lang-converter)
 
 Laravel JS Lang Converter converts all your localization messages of your Laravel app to JavaScript, providing a small JavaScript library to interact with those messages in the fron end.
 
-Most of the work has been developed in [Mariuzzo's package ](https://github.com/rmariuzzo/laravel-js-localization)
+Most of the work has been developed in [Mariuzzo's package ](https://github.com/rmariuzzo/laravel-js-lang-converter)
 
 Support Laravel Laravel 5.1.x and 5.2.x.
 
@@ -20,7 +22,7 @@ Installation
 Add the following line to you `composer.json` file under `require`.
 
 ```json
-"michele-angioni/laravel-js-localization": "~2.0"
+"michele-angioni/laravel-js-lang-converter": "~2.0"
 ```
 
 Then you can run `composer update` or `composer install`.
