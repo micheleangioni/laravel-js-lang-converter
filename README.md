@@ -99,7 +99,7 @@ elixir(function(mix) {
 Documentation
 -------------
 
-This is the documentation regarding the thin JavaScript library. The library highly inspired on Laravel's `Lang` class.
+This is the documentation regarding the thin JavaScript library. The library is highly inspired on Laravel's `Lang` class.
 
 **Getting a message**
 
