@@ -71,6 +71,56 @@ class LangJsCommandTest extends TestCase
     }
 
     /**
+     * @return void
+     */
+    public function testAllFilesShouldbeConverted()
+    {
+        $generator = new LangJsGenerator(new File(), __DIR__.'/fixtures/lang');
+
+        $command = new LangJsCommand($generator);
+        $command->setLaravel($this->app);
+
+        $code = $this->runCommand($command, ['target' => __DIR__.'/output/lang.js']);
+
+        $this->assertRunsWithSuccess($code);
+
+        $output = __DIR__.'/output/lang.js';
+
+        $this->assertFileExists($output);
+
+        $contents = file_get_contents($output);
+
+        $this->assertContains('createCongregation', $contents);
+    }
+
+    /**
+     * @return void
+     */
+    public function testOnlySelectedFilesShouldbeConverted()
+    {
+        $this->app['config']->set('laravel_js_lang.files', [
+            'validation'
+        ]);
+
+        $generator = new LangJsGenerator(new File(), __DIR__.'/fixtures/lang');
+
+        $command = new LangJsCommand($generator);
+        $command->setLaravel($this->app);
+
+        $code = $this->runCommand($command, ['target' => __DIR__.'/output/lang.js']);
+
+        $this->assertRunsWithSuccess($code);
+
+        $output = __DIR__.'/output/lang.js';
+
+        $this->assertFileExists($output);
+
+        $contents = file_get_contents($output);
+
+        $this->assertNotContains('createCongregation', $contents);
+    }
+
+    /**
      * Run the command.
      * @param \Illuminate\Console\Command $command
      * @param array $input

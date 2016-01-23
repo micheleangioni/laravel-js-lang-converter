@@ -28,10 +28,10 @@ class LangJsGenerator
     }
 
     /**
-     * Generate a JS lang file from all language files.
+     * Generate a JS lang file from all language files to the $target file.
      *
-     * @param string $target  The target directory.
-     * @param array  $options Array of options.
+     * @param string  $target
+     * @param array  $options
      *
      * @return int
      */
@@ -46,8 +46,7 @@ class LangJsGenerator
         $template = str_replace('\'{ messages }\'', json_encode($messages), $template);
         $template = str_replace('\'{ langjs }\';', $langjs, $template);
 
-        if ($options['compress'])
-        {
+        if ($options['compress']) {
             $template = Minifier::minify($template);
         }
 
@@ -62,41 +61,64 @@ class LangJsGenerator
      */
     protected function getMessages()
     {
-        $messages = array();
-        $path = $this->sourcePath;
+        $messages = [];
+        $sourcePath = $this->sourcePath;
 
-        if ( ! $this->file->exists($path))
-        {
-            throw new \Exception("${path} doesn't exists!");
+        if ( ! $this->file->exists($sourcePath)) {
+            throw new \Exception("${sourcePath} doesn't exists!");
         }
 
-        foreach ($this->file->allFiles($path) as $file)
-        {
+        foreach ($this->file->allFiles($sourcePath) as $file) {
             $pathName = $file->getRelativePathName();
 
-            if ( $this->file->extension($pathName) !== 'php' ) continue;
+            if ( $this->file->extension($pathName) !== 'php' ) {
+                continue;
+            }
+
+            if(!$this->fileIsIncludedInFileList($file->getFileName())) {
+                continue;
+            }
 
             $key = substr($pathName, 0, -4);
             $key = str_replace('\\', '.', $key);
             $key = str_replace('/', '.', $key);
 
-            $messages[ $key ] = include "${path}/${pathName}";
+            $messages[ $key ] = include "${sourcePath}/${pathName}";
         }
 
         return $messages;
     }
 
     /**
-     * Prepare the target directoy.
+     * Check if input file is included in the file list to be converted.
+     * If the file list is empty, all files will be included.
      *
-     * @param string $target The target directory.
+     * @param  string  $fileName
+     * @return bool
+     */
+    protected function fileIsIncludedInFileList($fileName)
+    {
+        if(count(config('laravel_js_lang.files')) === 0) {
+            return true;
+        }
+
+        if(in_array($fileName, config('laravel_js_lang.files'))) {
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Prepare the target directory.
+     *
+     * @param  string  $target
      */
     protected function prepareTarget($target)
     {
         $dirname = dirname($target);
 
-        if ( ! $this->file->exists($dirname) )
-        {
+        if ( ! $this->file->exists($dirname) ) {
             $this->file->makeDirectory($dirname);
         }
     }
