@@ -25,9 +25,9 @@ Add the following line to you `composer.json` file under `require`.
 "michele-angioni/laravel-js-lang-converter": "~2.0"
 ```
 
-Then you can run `composer update` or `composer install`.
+and run `composer update` or `composer install`.
 
-Finally you need to add the Laravel JS Lang Converter service provider in your `app/config/app.php` file 
+Then you need to add the Laravel JS Lang Converter service provider in your `app/config/app.php` file 
 
 ```php
 'providers' => [
@@ -37,7 +37,9 @@ Finally you need to add the Laravel JS Lang Converter service provider in your `
 ],
 ```
 
-and you are done!
+In order to use some package features, you need to publish the config file through the artisan command `php artisan vendor:publish`. It will create the `laravel_js_lang.php` file in your config directory.
+
+Now you are done!
 
 Usage
 -----
@@ -54,6 +56,17 @@ php artisan lang:js
 
 ```shell
 php artisan lang:js public/assets/dist/lang.dist.js
+```
+
+**Converting only some files**
+
+If you don't want to convert ALL your lang files, you can specify the files you want to be converted into your `laravel_js_lang.php` conf file. Under the `files` array, just add the list of your source files, like so:
+
+```php
+'files' => [
+    'pagination',
+    'validation'
+]
 ```
 
 **Compressing the JS file**
