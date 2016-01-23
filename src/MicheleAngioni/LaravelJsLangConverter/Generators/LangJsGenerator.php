@@ -75,7 +75,7 @@ class LangJsGenerator
                 continue;
             }
 
-            if(!$this->fileIsIncludedInFileList($file->getFileName())) {
+            if(!$this->fileIsIncludedInFileList(substr($file->getFileName(), 0, -4))) {
                 continue;
             }
 
