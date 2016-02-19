@@ -43,18 +43,33 @@
 
     /**
      * Returns a translation message.
+     * Il no locale is given, the current locale will be used.
      *
      * @param key {string} The key of the message.
      * @param replacements {object} The replacements to be done in the message.
+     * @param locale {locale} The locale to be used.
      *
-     * @return {string} The translation message, if not found the given key.
+     * @return {string} The translation message. If not found the default locale will be tried and eventually the given key will be returned.
      */
-    Lang.prototype.get = function(key, replacements) {
-        if (!this.has(key)) {
-            return key;
+    Lang.prototype.get = function(key, replacements, locale) {
+        if (!locale) {
+            locale = this.getLocale();
         }
 
-        var message = this._getMessage(key, replacements);
+        // Check if the key exists in the required locale. If not found, try the default locale
+
+        if (!this.has(key, locale)) {
+
+            if(locale === this.defaultLocale)
+                return key;
+
+            locale = this.defaultLocale;
+
+            if (!this.has(key, locale))
+                return key;
+        }
+
+        var message = this._getMessage(key, locale);
         if (message === null) {
             return key;
         }
@@ -70,14 +85,15 @@
      * Returns true if the key is defined on the messages source.
      *
      * @param key {string} The key of the message.
+     * @param locale {string} The locale will be used.
      *
      * @return {boolean} true if the given key is defined on the messages source, otherwise false.
      */
-    Lang.prototype.has = function(key) {
+    Lang.prototype.has = function(key, locale) {
         if (typeof key !== 'string' || !this.messages) {
             return false;
         }
-        return this._getMessage(key) !== null;
+        return this._getMessage(key, locale) !== null;
     };
 
     /**
@@ -92,7 +108,7 @@
     Lang.prototype.choice = function(key, count, replacements) {
         // Set default values for parameters replace and locale
         replacements = typeof replacements !== 'undefined' ? replacements : {};
-        
+
         // The count must be replaced if found in the message
         replacements['count'] = count;
 
@@ -166,30 +182,32 @@
      * Parse a message key into components.
      *
      * @param key {string} The message key to parse.
+     * @param locale {string} The locale to be used.
      *
      * @return {object} A key object with source and entries properties.
      */
-    Lang.prototype._parseKey = function(key) {
+    Lang.prototype._parseKey = function(key, locale) {
         if (typeof key !== 'string') {
             return null;
         }
         var segments = key.split('.');
         return {
-            source: this.getLocale() + '.' + segments[0],
+            source: locale + '.' + segments[0],
             entries: segments.slice(1)
         };
     };
 
     /**
-     * Returns a translation message. Use `Lang.get()` method instead, this methods assumes the key exists.
+     * Returns a translation message. This methods assumes the key exists on input locale.
      *
      * @param key {string} The key of the message.
+     * @param locale {string} The locale to be used
      *
      * @return {string} The translation message for the given key.
      */
-    Lang.prototype._getMessage = function(key) {
+    Lang.prototype._getMessage = function(key, locale) {
 
-        key = this._parseKey(key);
+        key = this._parseKey(key, locale);
 
         // Ensure message source exists.
         if (this.messages[key.source] === undefined) {
