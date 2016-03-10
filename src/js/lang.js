@@ -328,7 +328,7 @@
      * @return {Number}
      */
     Lang.prototype._getPluralForm = function (count) {
-        switch (this.locale) {
+        switch (this.locale.substr(0,2)) {
             case 'az':
             case 'bo':
             case 'dz':
