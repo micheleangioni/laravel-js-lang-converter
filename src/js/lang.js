@@ -163,6 +163,11 @@
      * @return void
      */
     Lang.prototype.setLocale = function(locale) {
+        // If a full locale is found (i.e. en_US, it will be converted to country only)
+        if(locale.indexOf('_') == 2) {
+            locale = locale.substr(0, 2)
+        }
+
         this.locale = locale;
     };
 
