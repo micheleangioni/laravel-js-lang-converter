@@ -163,11 +163,6 @@
      * @return void
      */
     Lang.prototype.setLocale = function(locale) {
-        // If a full locale is found (i.e. en_US, it will be converted to country only)
-        if(locale.indexOf('_') == 2) {
-            locale = locale.substr(0, 2)
-        }
-
         this.locale = locale;
     };
 
@@ -333,7 +328,11 @@
      * @return {Number}
      */
     Lang.prototype._getPluralForm = function (count) {
-        switch (this.locale) {
+        
+        // If a full locale is found (i.e. en_US), parse the 2-letter lang code from before the underscore
+        var lang = (this.locale.indexOf('_') == 2) ? this.locale.substr(0, 2) : this.locale;
+
+        switch (lang) {
             case 'az':
             case 'bo':
             case 'dz':
