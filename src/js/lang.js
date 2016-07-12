@@ -193,7 +193,7 @@
         }
         var segments = key.split('.');
         return {
-            source: locale + '.' + segments[0],
+            source: locale + '.' + segments[0].replace('/', '.'),
             entries: segments.slice(1)
         };
     };
