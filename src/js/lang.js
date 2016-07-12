@@ -90,6 +90,10 @@
      * @return {boolean} true if the given key is defined on the messages source, otherwise false.
      */
     Lang.prototype.has = function(key, locale) {
+        if (!locale) {
+            locale = this.getLocale();
+        }
+        
         if (typeof key !== 'string' || !this.messages) {
             return false;
         }
