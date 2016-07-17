@@ -3,6 +3,7 @@ Laravel JS Lang Converter
 
 > Laravel Localization in JavaScript.
 
+![Laravel 5.3](https://img.shields.io/badge/Laravel-5.3-f4645f.svg)
 ![Laravel 5.2](https://img.shields.io/badge/Laravel-5.2-f4645f.svg)
 ![Laravel 5.1](https://img.shields.io/badge/Laravel-5.1-f4645f.svg)
 [![Latest Stable Version](https://poser.pugx.org/michele-angioni/laravel-js-lang-converter/v/stable.svg)](https://packagist.org/packages/michele-angioni/laravel-js-lang-converter)
