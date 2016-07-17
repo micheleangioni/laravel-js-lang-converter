@@ -14,7 +14,7 @@ Laravel JS Lang Converter converts all your localization messages of your Larave
 
 Most of the work has been developed in [Mariuzzo's package ](https://github.com/rmariuzzo/laravel-js-localization)
 
-Support Laravel Laravel 5.1, 5.2 and 5.3.
+Laravel 5.1, 5.2 and 5.3 are supported.
 
 Installation
 ------------
