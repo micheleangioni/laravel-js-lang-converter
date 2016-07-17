@@ -14,7 +14,7 @@ Laravel JS Lang Converter converts all your localization messages of your Larave
 
 Most of the work has been developed in [Mariuzzo's package ](https://github.com/rmariuzzo/laravel-js-localization)
 
-Support Laravel Laravel 5.1.x and 5.2.x.
+Support Laravel Laravel 5.1, 5.2 and 5.3.
 
 Installation
 ------------
@@ -175,21 +175,21 @@ You need to have installed the following softwares.
  - NPM
  - PHP 5.5.9+
 
-After getting all the required softwares you may run the following commands to get everything ready:
+After getting all the required software you may run the following commands to get everything ready:
 
 1. Install PHP dependencies:
 
-    ```shell
-    composer install
-    ```
+```shell
+composer install
+```
 
 2. Install NPM dependences:
 
-    ```shell
-    npm install -g jasmine-node
-    
-    npm install
-    ```
+```shell
+npm install -g jasmine-node
+
+npm install
+```
 
 Now you are good to go! Happy coding!
 
