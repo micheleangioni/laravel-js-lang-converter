@@ -30,8 +30,11 @@ describe('The Lang.get() method', function() {
         expect(Lang.get('messages.family.children.son')).toBe('Jimmy');
     });
 
+    it('should return the expected object', function() {
+        expect(Lang.get('messages.family.children')).toEqual({ son : 'Jimmy' });
+    });
+
     it('should return the passed key when nested message does not point to a message', function() {
-        expect(Lang.get('messages.family.children')).toBe('messages.family.children');
         expect(Lang.get('a.b.c.d.f.g.h.i.j.k')).toBe('a.b.c.d.f.g.h.i.j.k');
     });
 
