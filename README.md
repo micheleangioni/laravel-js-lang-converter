@@ -3,9 +3,6 @@ Laravel JS Lang Converter
 
 > Laravel Localization in JavaScript.
 
-![Laravel 5.3](https://img.shields.io/badge/Laravel-5.3-f4645f.svg)
-![Laravel 5.2](https://img.shields.io/badge/Laravel-5.2-f4645f.svg)
-![Laravel 5.1](https://img.shields.io/badge/Laravel-5.1-f4645f.svg)
 [![Latest Stable Version](https://poser.pugx.org/michele-angioni/laravel-js-lang-converter/v/stable.svg)](https://packagist.org/packages/michele-angioni/laravel-js-lang-converter)
 [![License](https://poser.pugx.org/michele-angioni/laravel-js-lang-converter/license.svg)](https://packagist.org/packages/michele-angioni/laravel-js-lang-converter)
 [![Build Status](https://travis-ci.org/micheleangioni/laravel-js-lang-converter.svg?branch=master)](https://travis-ci.org/micheleangioni/laravel-js-lang-converter)
@@ -15,7 +12,7 @@ Laravel JS Lang Converter converts all your localization messages of your Larave
 
 Most of the work has been developed in [Mariuzzo's package ](https://github.com/rmariuzzo/laravel-js-localization)
 
-Laravel 5.1, 5.2 and 5.3 are supported.
+Laravel 5.1 - 5.4 are supported. PHP 5.6+ is required.
 
 Installation
 ------------
