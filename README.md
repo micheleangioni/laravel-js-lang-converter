@@ -12,7 +12,8 @@ Laravel JS Lang Converter converts all your localization messages of your Larave
 
 Most of the work has been developed in [Mariuzzo's package ](https://github.com/rmariuzzo/laravel-js-localization)
 
-Laravel 5.1 - 5.4 are supported. PHP 5.6+ is required.
+Laravel 5.5 is supported. PHP 7.0 is required.
+For Laravel 5.1 - 5-6 versions, use the v2.x branch.
 
 Installation
 ------------
@@ -20,7 +21,7 @@ Installation
 Add the following line to you `composer.json` file under `require`.
 
 ```json
-"michele-angioni/laravel-js-lang-converter": "~2.0"
+"michele-angioni/laravel-js-lang-converter": "~3.0"
 ```
 
 and run `composer update` or `composer install`.
@@ -171,7 +172,7 @@ You need to have installed the following softwares.
  - Composer
  - NodeJS
  - NPM
- - PHP 5.5.9+
+ - PHP 7.0+
 
 After getting all the required software you may run the following commands to get everything ready:
 
