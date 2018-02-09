@@ -136,7 +136,7 @@ class LangJsCommandTest extends TestCase
      * @param int  $code
      * @param null $message
      */
-    protected function assertRunsWithSuccess($code, $message = null)
+    protected function assertRunsWithSuccess($code, $message = '')
     {
         $this->assertEquals(0, $code, $message);
     }

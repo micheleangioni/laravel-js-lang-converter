@@ -12,8 +12,8 @@ Laravel JS Lang Converter converts all your localization messages of your Larave
 
 Most of the work has been developed in [Mariuzzo's package ](https://github.com/rmariuzzo/laravel-js-localization)
 
-Laravel 5.5 is supported. PHP 7.0 is required.
-For Laravel 5.1 - 5-6 versions, use the v2.x branch.
+Laravel 5.5+ is supported. PHP 7.0 is required.
+For Laravel 5.1 - 5-4 versions, use the v2.x branch.
 
 Installation
 ------------
@@ -206,5 +206,5 @@ npm test
 To run all PHP tests type in your terminal:
 
 ```shell
-phpunit
+vendor/bin/phpunit tests/
 ```
