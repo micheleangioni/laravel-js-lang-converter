@@ -1,6 +1,6 @@
 {
     "name": "laravel-js-lang-converter",
-    "version": "2.0.0",
+    "version": "3.0.0",
     "description": "Laravel Localization in JavaScript",
     "main": "src/js/lang.js",
     "directories": {
