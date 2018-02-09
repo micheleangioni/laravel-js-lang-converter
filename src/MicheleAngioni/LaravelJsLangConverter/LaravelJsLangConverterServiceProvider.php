@@ -35,12 +35,11 @@ class LaravelJsLangConverterServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('localization.js', function ($app)
-        {
+        $this->app->singleton('localization.js', function ($app) {
             $files = $app['files'];
-            $langs = $app['path.base'].'/resources/lang';
+            $langs = $app['path.base'] . '/resources/lang';
             $generator = new Generators\LangJsGenerator($files, $langs);
-            
+
             return new Commands\LangJsCommand($generator);
         });
 

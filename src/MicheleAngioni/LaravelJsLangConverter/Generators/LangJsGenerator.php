@@ -18,8 +18,8 @@ class LangJsGenerator
     /**
      * Construct a new LangJsGenerator instance.
      *
-     * @param  \Illuminate\Filesystem\Filesystem  $file
-     * @param  string  $sourcePath
+     * @param  \Illuminate\Filesystem\Filesystem $file
+     * @param  string $sourcePath
      */
     public function __construct(File $file, $sourcePath)
     {
@@ -30,8 +30,8 @@ class LangJsGenerator
     /**
      * Generate a JS lang file from all language files to the $target file.
      *
-     * @param string  $target
-     * @param array  $options
+     * @param string $target
+     * @param array $options
      *
      * @return int
      */
@@ -64,18 +64,18 @@ class LangJsGenerator
         $messages = [];
         $sourcePath = $this->sourcePath;
 
-        if ( ! $this->file->exists($sourcePath)) {
+        if (!$this->file->exists($sourcePath)) {
             throw new \Exception("${sourcePath} doesn't exists!");
         }
 
         foreach ($this->file->allFiles($sourcePath) as $file) {
             $pathName = $file->getRelativePathName();
 
-            if ( $this->file->extension($pathName) !== 'php' ) {
+            if ($this->file->extension($pathName) !== 'php') {
                 continue;
             }
 
-            if(!$this->fileIsIncludedInFileList(substr($file->getFileName(), 0, -4))) {
+            if (!$this->fileIsIncludedInFileList(substr($file->getFileName(), 0, -4))) {
                 continue;
             }
 
@@ -83,7 +83,7 @@ class LangJsGenerator
             $key = str_replace('\\', '.', $key);
             $key = str_replace('/', '.', $key);
 
-            $messages[ $key ] = include "${sourcePath}/${pathName}";
+            $messages[$key] = include "${sourcePath}/${pathName}";
         }
 
         return $messages;
@@ -93,16 +93,16 @@ class LangJsGenerator
      * Check if input file is included in the file list to be converted.
      * If the file list is empty, all files will be included.
      *
-     * @param  string  $fileName
+     * @param  string $fileName
      * @return bool
      */
     protected function fileIsIncludedInFileList($fileName)
     {
-        if(!config('laravel_js_lang.files') || count(config('laravel_js_lang.files')) === 0) {
+        if (!config('laravel_js_lang.files') || count(config('laravel_js_lang.files')) === 0) {
             return true;
         }
 
-        if(in_array($fileName, config('laravel_js_lang.files'))) {
+        if (in_array($fileName, config('laravel_js_lang.files'))) {
             return true;
         }
 
@@ -112,13 +112,13 @@ class LangJsGenerator
     /**
      * Prepare the target directory.
      *
-     * @param  string  $target
+     * @param  string $target
      */
     protected function prepareTarget($target)
     {
         $dirname = dirname($target);
 
-        if ( ! $this->file->exists($dirname) ) {
+        if (!$this->file->exists($dirname)) {
             $this->file->makeDirectory($dirname);
         }
     }
