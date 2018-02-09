@@ -98,7 +98,7 @@ class LangJsGenerator
      */
     protected function fileIsIncludedInFileList($fileName)
     {
-        if(count(config('laravel_js_lang.files')) === 0) {
+        if(!config('laravel_js_lang.files') || count(config('laravel_js_lang.files')) === 0) {
             return true;
         }
 
